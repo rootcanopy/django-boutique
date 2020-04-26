@@ -1,0 +1,4 @@
+{
+    "editor.autoClosingBrackets": "always",
+    "python.pythonPath": ".venv/bin/python"
+}
