@@ -12,4 +12,6 @@
         "semanticHighlighting": false,
         "editorLineNumber.foreground": "#FFFFFF",
     },
+    "editor.wrappingIndent": "indent",
+    "workbench.tree.indent": 10,
 }
