@@ -1,4 +1,14 @@
 {
     "editor.autoClosingBrackets": "always",
-    "python.pythonPath": "venv/bin/python"
+    "python.pythonPath": "venv/bin/python",
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements",
+        "emmet.includeLanguages": {"django-html": "html"}, 
+    },
+    "editor.tokenColorCustomizations": {
+        "semanticHighlighting": false
+    },
 }
