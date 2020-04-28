@@ -9,7 +9,7 @@
         "emmet.includeLanguages": {"django-html": "html"}, 
     },
     "editor.tokenColorCustomizations": {
-        "semanticHighlighting": false,
+        "semanticHighlighting": true,
         "editorLineNumber.foreground": "#FFFFFF",
     },
     "editor.wrappingIndent": "indent",
