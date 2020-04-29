@@ -1,5 +1,6 @@
 {% extends 'base.html'%}
 {% load static %}
+{% load bag_tools %}
 
 {% block page_header%}
 <div class="container header-container">
@@ -92,11 +93,11 @@
                                 </div>
                             </form>
                             <a class="update-link text-info"><small>Update</small></a>
-                            <a class="update-link text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
                         </td>
 
                         <td class="py-3">
-                            <p class="my-0">${{ item.product.price }}</p>
+                            <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                     </tr>
                     {% endfor %}
@@ -151,7 +152,7 @@
 
 {% endblock %}
 
-{% block postloadjs %}
+{% block postload_js %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 
