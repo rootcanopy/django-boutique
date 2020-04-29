@@ -103,7 +103,7 @@
                             </div>
                         </div>
 
-                        <div class="col{% if s %}-12 mt-2 {% endif %}-12">
+                        <div class="col{% if s %}-12 mt-2 {% endif %}">
                             <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
@@ -123,7 +123,6 @@
 
 {% endblock %}
 
-{% block postload_js %}
+{% block postloadjs %}
 {{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
