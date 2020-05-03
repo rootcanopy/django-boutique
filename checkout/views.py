@@ -144,10 +144,11 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     
-    profile = UserProfile.objects.get(user=request.user)
-    # attach user profile to order
-    order.user_profile = profile
-    order.save()
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # attach user profile to order
+        order.user_profile = profile
+        order.save()
 
     if save_info:
         profile_data = {
@@ -159,7 +160,7 @@ def checkout_success(request, order_number):
             'default_street_address2': order.street_address2,
             'default_county': order.county,
         }
-        user_profile_form = user_profile_form(profile_data, instance=profile)
+        user_profile_form = UserProfileForm(profile_data, instance=profile)
         if user_profile_form.is_valid():
             user_profile_form.save()
     
