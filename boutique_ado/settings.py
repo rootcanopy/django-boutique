@@ -177,6 +177,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
+    # CACHE CONTROL
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2021 20:00:00 GMT',
+        'CacheControl': 'max-age=9560',
+    }
+    
     # BUCKET CONFIG
     AWS_STORAGE_BUCKET_NAME = 'django-boutique'
     AWS_S3_REGION_NAME = 'eu-north-1'
